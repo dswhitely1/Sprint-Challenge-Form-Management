@@ -1,27 +1,42 @@
+import {
+  Field,
+  Form,
+  withFormik
+} from 'formik';
 import React from 'react';
-import {withFormik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 
-function Registration( {values}) {
+function Registration( {values, errors, touched} ) {
   const {username, password} = values;
-  return(
+  return (
     <Form>
       <label>Username</label>
-    <Field name='username' value={username} />
-    <label>Password</label>
+      <Field name='username' value={username} />
+      {touched.username && errors.username && <h3>{errors.username}</h3>}
+      <label>Password</label>
       <Field name='password' type='password' value={password} />
-  </Form>
-  )
+      {touched.password && errors.password && <h3>{errors.password}</h3>}
+    </Form>
+  );
 }
 
-
-
-export default withFormik({
-  mapPropsToValues: ({username, password}) => ({
+export default withFormik( {
+  mapPropsToValues: ( {username, password} ) => ({
     username: username || '',
     password: password || ''
   }),
-  handleSubmit: (values) => {
-    console.log(values);
+  validationSchema: Yup.object()
+                       .shape( {
+                         username: Yup.string()
+                                      .min( 6, 'Username must be at least 6 characters' )
+                                      .max( 20, 'Username cannot be over 20 characters' )
+                                      .required( 'Username is Required' ),
+                         password: Yup.string()
+                                      .min( 6, 'Password must be at least 6 characters' )
+                                      .max( 20, 'Password cannot be over 20 characters' )
+                                      .required( 'Username is Required' )
+                       } ),
+  handleSubmit    : ( values ) => {
+    console.log( values );
   }
-})(Registration);
+} )( Registration );
