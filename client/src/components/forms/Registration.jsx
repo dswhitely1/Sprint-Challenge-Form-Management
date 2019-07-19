@@ -6,10 +6,12 @@ import {
 } from 'formik';
 import React from 'react';
 import * as Yup from 'yup';
+import {Link} from 'react-router-dom'
 
-function Registration( {values, errors, touched} ) {
+function Registration( {values, errors, touched,match} ) {
   const {username, password} = values;
   return (
+    <>
     <Form>
       <label>Username</label>
       <Field name='username' value={username} />
@@ -19,6 +21,9 @@ function Registration( {values, errors, touched} ) {
       {touched.password && errors.password && <h3>{errors.password}</h3>}
       <button type='Submit'>Submit</button>
     </Form>
+      {match.path === "/" && <p>{`Don't have an account, Click `}<Link to='/register'>{`Here`}</Link>{` to Register!`}</p>}
+      {match.path === "/register" && <p>{`Have an account?  Click `}<Link to='/'>{`Here`}</Link>{` to Login!`}</p>}
+      </>
   );
 }
 
@@ -39,8 +44,13 @@ export default withFormik( {
                                       .required( 'Username is Required' )
                        } ),
   handleSubmit    : ( values, formikBag ) => {
-    axios.post( 'http://localhost:5000/api/register', values )
-         .then( res => formikBag.props.login( res.data ) )
-         .catch( err => console.log( err ) );
+    console.log(formikBag);
+    axios.post( `http://localhost:5000/api${formikBag.props.url}`, values )
+         .then( res => {
+           console.log(res);
+           formikBag.props.login( res.data.token )
+           formikBag.props.history.push('/recipes');
+         })
+         .catch( err => console.log( err.response.data ) );
   }
 } )( Registration );
