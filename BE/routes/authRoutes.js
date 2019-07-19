@@ -17,7 +17,7 @@ router.post('/register', function(req, res, next) {
   let { username, password } = req.body;
 
   if (!username || !password)
-    return res.json({
+    return res.status(400).json({
       error: true,
       message: 'Please provide a Username, Password'
     });
@@ -41,7 +41,7 @@ router.post('/login', function(req, res, next) {
   let { username, password } = req.body;
 
   if (!username || !password)
-    return res.json({
+    return res.status(400).json({
       error: true,
       message: 'Please provide a Username and Password'
     });
@@ -60,7 +60,7 @@ router.post('/login', function(req, res, next) {
           token
         });
       } else {
-        return res.json({
+        return res.status(404).json({
           error: true,
           message: 'Invalid Login Info'
         });
