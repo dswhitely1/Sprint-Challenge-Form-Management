@@ -24,36 +24,36 @@ In the challenge for this Sprint, you will demonstrate proficiency by creating a
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Why are forms used so often in web applications and software?
+- [x] Why are forms used so often in web applications and software?  It's the main way for a user to type out information and send it over to the server.  Rather it be a Login form, a Register form, or vice versa.  It's the glue that helps the client send information to the server.
 
-- [ ] What advantages are there by using a forms library like Formik?
+- [x] What advantages are there by using a forms library like Formik?  Using a form library helps the developer by not managing certain aspects of the business logic inside of our application.  For example, Formik will manage the controlled inputs, handleSubmit, and handleChange functions for us.  We do not need to define that in our code.  
 
-- [ ] What is stateful logic?
+- [x] What is stateful logic?  Any Data that is needed inside the app to use.  For example, holding an Auth State to see if the user is authenticated or not.
 
-- [ ] What is a custom hook, and what does it mean to compose hooks together?
+- [x] What is a custom hook, and what does it mean to compose hooks together?  A custom hook is a function that can be used across different components.  Every time it's imported and defined in a component, it has it's own values and the values are a perfect example of what closures are.
 
-- [ ] Describe the process of retriving a token from a server and using that token in subsequent API calls.
+- [x] Describe the process of retriving a token from a server and using that token in subsequent API calls.  When a user logins in to a website, the server will generate a JWT, `jsonwebtoken`, and that token can be used when put into the headers of the future request so that the user can access restricted material on the server. )
 
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo. **(Not Lambda's by mistake!)**
-- [ ] Create a new Branch locally: `git checkout -b <firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add ~~PM~~ TL as collaborator on Github.
+- [x] Clone your OWN version of Repo. **(Not Lambda's by mistake!)**
+- [x] Create a new Branch locally: `git checkout -b <firstName-lastName>`.
 
-- [ ] Implement the project on this Branch, **committing progress & changes often.**
-- [ ] Push commits: `git push origin <firstName-lastName>`.
-- [ ] Navigate to the BE folder in this repository (this is where your server is located) from the command line, install the dependencies, and run `yarn start` or `npm start` to spin up the server provided for you.
-- [ ] In the terminal, navigate back to the main folder, then into the `client` folder.
-- [ ] Create your React app here.
+- [x] Implement the project on this Branch, **committing progress & changes often.**
+- [x] Push commits: `git push origin <firstName-lastName>`.
+- [x] Navigate to the BE folder in this repository (this is where your server is located) from the command line, install the dependencies, and run `yarn start` or `npm start` to spin up the server provided for you.
+- [x] In the terminal, navigate back to the main folder, then into the `client` folder.
+- [x] Create your React app here.
 
 Follow these steps for completing your project:
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
-- [ ] Add your Project Manager as a Reviewer on the Pull-request.
-- [ ] PM then will count the HW as done by merging the branch back into master.
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
+- [x] Add your ~~Project Manager~~ Team Leader as a Reviewer on the Pull-request.
+- [x] ~~PM~~ TL then will count the HW as done by merging the branch back into master.
 
 ## Minimum Viable Product
 
