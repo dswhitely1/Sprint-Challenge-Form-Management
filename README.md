@@ -82,14 +82,14 @@ and the response object will look like this:
 
 - [x] Write a custom hook that can set and retrieve this token to and from local storage
 
-- [ ] A GET request made with the token to `http://localhost:6000/api/restricted/data` to retrieve protected data
+- [x] A GET request made with the token to `http://localhost:6000/api/restricted/data` to retrieve protected data
 
-- [ ] Map over the array of objects you recieve and render some or all of it's information to the DOM.
+- [x] Map over the array of objects you recieve and render some or all of it's information to the DOM.
 
 ## Stretch Problems
 
 1. Styling! Make your form pretty. Research pseudo elements and event selectors. Try to find interesting ways to present and layout the data you recieve from the back end.
 
-1. Make a Registration form. Compuse your Formik form in such a way that it can be extracted into a component and reused for both Register and Registration.
+1. [x] Make a Registration form. Compuse your Formik form in such a way that it can be extracted into a component and reused for both Register and Registration.
 
 1. Deep dive into validation. Can you make your register form check to see if a password is long enough? If it has special characters? Make two password fields for register and prevent the post request if the passwords don't match.

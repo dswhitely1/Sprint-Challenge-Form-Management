@@ -5,6 +5,8 @@ import React, {
   useState
 } from 'react';
 import AuthContext from '../../contexts/AuthContext';
+import { Card } from '../../styles/Card';
+import { Container } from '../../styles/Container';
 
 function Recipes() {
   const [recipeList, setRecipeList] = useState( [] );
@@ -26,23 +28,28 @@ function Recipes() {
   }, [] );
 
   return (
-    <>
+    <Container recipe>
+
       <h1>Recipes</h1>
       {recipeList.map( recipe => {
         return (
-          <div key={recipe.name}>
-            <h3>{recipe.name}</h3>
-            <p>{recipe.course}</p>
-            <p>{recipe.technique}</p>
+          <Card key={recipe.name}>
+            <div>
+            <h3>{`Name: ${recipe.name}`}</h3>
+            <p>{`Course: ${recipe.course}`}</p>
+            <p>{`Technique: ${recipe.technique}`}</p>
+            <p>Ingredients</p>
             <ul>
               {recipe.ingredients.map( ( ingredient, i ) =>
                 <li key={i}>{ingredient}</li> )}
             </ul>
-          </div>
+            </div>
+          </Card>
         );
 
       } )}
-    </>
+
+    </Container>
   );
 }
 
