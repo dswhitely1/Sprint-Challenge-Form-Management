@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   Field,
   Form,
@@ -16,6 +17,7 @@ function Registration( {values, errors, touched} ) {
       <label>Password</label>
       <Field name='password' type='password' value={password} />
       {touched.password && errors.password && <h3>{errors.password}</h3>}
+      <button type='Submit'>Submit</button>
     </Form>
   );
 }
@@ -38,5 +40,8 @@ export default withFormik( {
                        } ),
   handleSubmit    : ( values ) => {
     console.log( values );
+    axios.post( 'http://localhost:5000/api/register', values )
+         .then( res => console.log( res.data ) )
+         .catch( err => console.log( err ) );
   }
 } )( Registration );
