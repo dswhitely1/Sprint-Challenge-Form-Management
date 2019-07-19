@@ -34,7 +34,7 @@ router.post('/register', function(req, res, next) {
         token
       });
     })
-    .catch(next);
+    .catch(err=> res.status(400).json({error:true, message:'Username is already taken'}));
 });
 
 router.post('/login', function(req, res, next) {

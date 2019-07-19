@@ -15,6 +15,7 @@ export const useAuth = () => {
   }, [] );
 
   function newLogin( value ) {
+    console.log(value);
     setLocalStorage( value );
     setAuth( true );
   }
