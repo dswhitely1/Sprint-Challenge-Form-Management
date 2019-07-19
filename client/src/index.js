@@ -1,8 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-function TempApp() {
-  return <h1>Hello World</h1>
-}
+import App from './components/App'
 
-render(<TempApp />,document.getElementById('root'));
+render(<App />,document.getElementById('root'));

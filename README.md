@@ -24,7 +24,7 @@ In the challenge for this Sprint, you will demonstrate proficiency by creating a
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [x] Why are forms used so often in web applications and software?  It's the main way for a user to type out information and send it over to the server.  Rather it be a Login form, a Register form, or vice versa.  It's the glue that helps the client send information to the server.
+- [x] Why are forms used so often in web applications and software?  It's the main way for a user to type out information and send it over to the server.  Rather it be a Registration form, a Register form, or vice versa.  It's the glue that helps the client send information to the server.
 
 - [x] What advantages are there by using a forms library like Formik?  Using a form library helps the developer by not managing certain aspects of the business logic inside of our application.  For example, Formik will manage the controlled inputs, handleSubmit, and handleChange functions for us.  We do not need to define that in our code.  
 
@@ -59,7 +59,7 @@ Follow these steps for completing your project:
 
 Your finished project must include all of the following requirements:
 
-- [ ] A registration form built with formik - include inputs for a `username` and a `password`
+- [x] A registration form built with formik - include inputs for a `username` and a `password`
 - [ ] Form validation using Yup
 - [ ] A POST request made from the registration form to `http://localhost:6000/api/register` to add a user and retrieve a token - the request body should have the following shape:
 
@@ -90,6 +90,6 @@ and the response object will look like this:
 
 1. Styling! Make your form pretty. Research pseudo elements and event selectors. Try to find interesting ways to present and layout the data you recieve from the back end.
 
-1. Make a Login form. Compuse your Formik form in such a way that it can be extracted into a component and reused for both Register and Login.
+1. Make a Registration form. Compuse your Formik form in such a way that it can be extracted into a component and reused for both Register and Registration.
 
 1. Deep dive into validation. Can you make your register form check to see if a password is long enough? If it has special characters? Make two password fields for register and prevent the post request if the passwords don't match.
