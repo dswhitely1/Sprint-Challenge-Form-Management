@@ -4,11 +4,15 @@ import {
   Form,
   withFormik
 } from 'formik';
-import React from 'react';
+import React, {useContext} from 'react';
 import * as Yup from 'yup';
+import AuthContext from '../../contexts/AuthContext';
+
 
 function Registration( {values, errors, touched} ) {
   const {username, password} = values;
+  const authMethods = useContext(AuthContext);
+  console.log(authMethods)
   return (
     <Form>
       <label>Username</label>
@@ -38,10 +42,9 @@ export default withFormik( {
                                       .max( 20, 'Password cannot be over 20 characters' )
                                       .required( 'Username is Required' )
                        } ),
-  handleSubmit    : ( values ) => {
-    console.log( values );
+  handleSubmit    : ( values, formikBag ) => {
     axios.post( 'http://localhost:5000/api/register', values )
-         .then( res => console.log( res.data ) )
+         .then( res => formikBag.props.login(res.data)  )
          .catch( err => console.log( err ) );
   }
 } )( Registration );

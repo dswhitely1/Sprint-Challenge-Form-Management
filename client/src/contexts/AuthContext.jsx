@@ -1,6 +1,6 @@
 import {createContext} from 'react';
 
-const AuthContext = createContext(false);
+const AuthContext = createContext({});
 
 export const AuthProvider = AuthContext.Provider;
 

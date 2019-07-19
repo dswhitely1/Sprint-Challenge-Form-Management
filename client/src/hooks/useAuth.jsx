@@ -24,5 +24,9 @@ export const useAuth = () => {
     setAuth( false );
   }
 
-  return [auth, newLogin, newLogout];
+  function getToken() {
+    return getLocalStorage();
+  }
+
+  return [auth, newLogin, newLogout, getToken];
 };
